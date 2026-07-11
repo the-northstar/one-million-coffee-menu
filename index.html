@@ -7,13 +7,18 @@
 <style>
   :root { --primary:#1a0a00; --accent:#c8860a; }
   * { box-sizing:border-box; margin:0; padding:0; }
+  html { scroll-behavior:smooth; }
   body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; background:var(--primary); color:#f5efe6; min-height:100vh; }
   .wrap { max-width:640px; margin:0 auto; padding:2rem 1.25rem 3rem; }
   header { text-align:center; padding:1.5rem 0 2rem; }
+  .catnav { position:sticky; top:0; z-index:10; display:flex; gap:.5rem; overflow-x:auto; padding:.75rem 1.25rem; margin:0 -1.25rem 1rem; background:var(--primary); border-bottom:1px solid rgba(255,255,255,.12); scrollbar-width:none; }
+  .catnav::-webkit-scrollbar { display:none; }
+  .catnav a { flex:0 0 auto; padding:.35rem .8rem; border-radius:999px; font-size:.82rem; color:#f5efe6; text-decoration:none; border:1px solid rgba(255,255,255,.2); white-space:nowrap; }
+  .catnav a:hover { background:var(--accent); color:var(--primary); border-color:var(--accent); }
   header img { height:72px; width:auto; object-fit:contain; margin-bottom:.75rem; }
   header .name { font-size:.8rem; letter-spacing:.28em; text-transform:uppercase; color:var(--accent); font-weight:600; }
   header .title { font-family:Georgia,serif; font-size:2rem; margin-top:.4rem; }
-  .cat { margin-top:2rem; }
+  .cat { margin-top:2rem; scroll-margin-top:4rem; }
   .cat h2 { font-family:Georgia,serif; font-size:1.35rem; color:var(--accent); border-bottom:1px solid rgba(255,255,255,.15); padding-bottom:.4rem; margin-bottom:.75rem; }
   .cat ul { list-style:none; }
   .cat li { display:flex; align-items:baseline; gap:.5rem; padding:.35rem 0; font-size:1rem; }
@@ -31,74 +36,75 @@
       <div class="name">ONE MILLION COFFEE</div>
       <div class="title">Menu</div>
     </header>
+    <nav class="catnav"><a href="#cat-0-boissons-chaudes">Boissons chaudes</a><a href="#cat-1-affogato">Affogato</a><a href="#cat-2-boissons-froides">Boissons froïdes</a><a href="#cat-3-signature-cream-series">Signature Cream Series</a><a href="#cat-4-petit-dejeuner-formules">Petit-déjeuner &amp; Formules</a><a href="#cat-5-crepes-sucrees">Crêpes sucrées</a><a href="#cat-6-crepes-salees">Crêpes salées</a><a href="#cat-7-omelettes">Omelettes</a><a href="#cat-8-mojito">Mojito</a><a href="#cat-9-smoothies">Smoothies</a><a href="#cat-10-autres">Autres</a><a href="#cat-11-cafes">cafes</a></nav>
     
-      <section class="cat">
+      <section class="cat" id="cat-0-boissons-chaudes">
         <h2>Boissons chaudes</h2>
         <ul>
           <li><span class="n">Americano</span><span class="dots"></span><span class="p">3.500 DT</span></li><li><span class="n">Espresso</span><span class="dots"></span><span class="p">3.500 DT</span></li><li><span class="n">Cortado</span><span class="dots"></span><span class="p">3.800 DT</span></li><li><span class="n">Latte</span><span class="dots"></span><span class="p">4 DT</span></li><li><span class="n">Milk Chocolate</span><span class="dots"></span><span class="p">4.500 DT</span></li><li><span class="n">Mocha</span><span class="dots"></span><span class="p">5 DT</span></li><li><span class="n">Spanish Coffee</span><span class="dots"></span><span class="p">6 DT</span></li><li><span class="n">Flavored Coffee</span><span class="dots"></span><span class="p">6 DT</span></li><li><span class="n">Turkish Coffee</span><span class="dots"></span><span class="p">6 DT</span></li><li><span class="n">Hot Chocolate</span><span class="dots"></span><span class="p">8 DT</span></li>
         </ul>
       </section>
-      <section class="cat">
+      <section class="cat" id="cat-1-affogato">
         <h2>Affogato</h2>
         <ul>
           <li><span class="n">Affogato Classic Vanilla</span><span class="dots"></span><span class="p">8 DT</span></li><li><span class="n">Affogato Hazelnut</span><span class="dots"></span><span class="p">9 DT</span></li><li><span class="n">Affogato Caramel</span><span class="dots"></span><span class="p">9 DT</span></li><li><span class="n">Affogato Pistachio</span><span class="dots"></span><span class="p">10 DT</span></li>
         </ul>
       </section>
-      <section class="cat">
+      <section class="cat" id="cat-2-boissons-froides">
         <h2>Boissons froïdes</h2>
         <ul>
           <li><span class="n">Iced Americano</span><span class="dots"></span><span class="p">5 DT</span></li><li><span class="n">Iced Latte</span><span class="dots"></span><span class="p">5.500 DT</span></li><li><span class="n">Iced Mocha</span><span class="dots"></span><span class="p">6 DT</span></li><li><span class="n">Iced Flavored Latte</span><span class="dots"></span><span class="p">7 DT</span></li><li><span class="n">Iced Spanish Latte</span><span class="dots"></span><span class="p">7 DT</span></li><li><span class="n">Iced Chocolate</span><span class="dots"></span><span class="p">7 DT</span></li>
         </ul>
       </section>
-      <section class="cat">
+      <section class="cat" id="cat-3-signature-cream-series">
         <h2>Signature Cream Series</h2>
         <ul>
           <li><span class="n">Tiramisu Cream Latte</span><span class="dots"></span><span class="p">10 DT</span></li><li><span class="n">Vanilla Cream Latte</span><span class="dots"></span><span class="p">10 DT</span></li><li><span class="n">Caramel Cream Latte</span><span class="dots"></span><span class="p">10 DT</span></li><li><span class="n">Honey Cinnamon Latte</span><span class="dots"></span><span class="p">10 DT</span></li>
         </ul>
       </section>
-      <section class="cat">
+      <section class="cat" id="cat-4-petit-dejeuner-formules">
         <h2>Petit-déjeuner &amp; Formules</h2>
         <ul>
           <li><span class="n">Express 1</span><span class="dots"></span><span class="p">5.500 DT</span></li><li><span class="n">Express 2</span><span class="dots"></span><span class="p">6 DT</span></li><li><span class="n">Express 3</span><span class="dots"></span><span class="p">6.500 DT</span></li><li><span class="n">Express 4</span><span class="dots"></span><span class="p">7 DT</span></li><li><span class="n">Classique 1</span><span class="dots"></span><span class="p">7.500 DT</span></li><li><span class="n">Classique 2</span><span class="dots"></span><span class="p">8 DT</span></li><li><span class="n">Classique 3</span><span class="dots"></span><span class="p">8.500 DT</span></li><li><span class="n">Classique 4</span><span class="dots"></span><span class="p">9 DT</span></li><li><span class="n">Formule Douceur</span><span class="dots"></span><span class="p">12 DT</span></li><li><span class="n">Formule Gourmet</span><span class="dots"></span><span class="p">18 DT</span></li><li><span class="n">Formule Duo</span><span class="dots"></span><span class="p">30 DT</span></li>
         </ul>
       </section>
-      <section class="cat">
+      <section class="cat" id="cat-5-crepes-sucrees">
         <h2>Crêpes sucrées</h2>
         <ul>
           <li><span class="n">Nutella</span><span class="dots"></span><span class="p">8 DT</span></li><li><span class="n">Nutella &amp; Banana</span><span class="dots"></span><span class="p">10 DT</span></li><li><span class="n">Nutella &amp; Strawberry</span><span class="dots"></span><span class="p">10 DT</span></li><li><span class="n">Nutella &amp; Nuts</span><span class="dots"></span><span class="p">12 DT</span></li><li><span class="n">Lotus</span><span class="dots"></span><span class="p">12 DT</span></li><li><span class="n">Oreo</span><span class="dots"></span><span class="p">12 DT</span></li><li><span class="n">Caramel &amp; Nuts</span><span class="dots"></span><span class="p">12 DT</span></li><li><span class="n">Double Chocolate</span><span class="dots"></span><span class="p">12 DT</span></li>
         </ul>
       </section>
-      <section class="cat">
+      <section class="cat" id="cat-6-crepes-salees">
         <h2>Crêpes salées</h2>
         <ul>
           <li><span class="n">Thon Fromage (crêpe)</span><span class="dots"></span><span class="p">8.500 DT</span></li><li><span class="n">Special Thon (crêpe)</span><span class="dots"></span><span class="p">10 DT</span></li><li><span class="n">Jambon Fromage (crêpe)</span><span class="dots"></span><span class="p">8.500 DT</span></li><li><span class="n">Special Jambon (crêpe)</span><span class="dots"></span><span class="p">10 DT</span></li><li><span class="n">Special Chef (crêpe)</span><span class="dots"></span><span class="p">10 DT</span></li><li><span class="n">Special One Million (crêpe)</span><span class="dots"></span><span class="p">12 DT</span></li><li><span class="n">Classique Fromage (crêpe)</span><span class="dots"></span><span class="p">6.500 DT</span></li><li><span class="n">Œuf Fromage (crêpe)</span><span class="dots"></span><span class="p">7.500 DT</span></li>
         </ul>
       </section>
-      <section class="cat">
+      <section class="cat" id="cat-7-omelettes">
         <h2>Omelettes</h2>
         <ul>
           <li><span class="n">Omelette Fromage</span><span class="dots"></span><span class="p">6.500 DT</span></li><li><span class="n">Omelette Spécial Thon</span><span class="dots"></span><span class="p">9 DT</span></li><li><span class="n">Omelette Spécial Jambon</span><span class="dots"></span><span class="p">9 DT</span></li><li><span class="n">Omelette Special One Million</span><span class="dots"></span><span class="p">11 DT</span></li>
         </ul>
       </section>
-      <section class="cat">
+      <section class="cat" id="cat-8-mojito">
         <h2>Mojito</h2>
         <ul>
           <li><span class="n">Mojito Classic</span><span class="dots"></span><span class="p">8 DT</span></li><li><span class="n">Mojito Strawberry</span><span class="dots"></span><span class="p">10 DT</span></li><li><span class="n">Mojito Peach</span><span class="dots"></span><span class="p">10 DT</span></li><li><span class="n">Mojito Cherry</span><span class="dots"></span><span class="p">10 DT</span></li><li><span class="n">Mojito Red Fruit</span><span class="dots"></span><span class="p">10 DT</span></li><li><span class="n">Mojito Passion Fruit</span><span class="dots"></span><span class="p">10 DT</span></li><li><span class="n">Mojito Framboise</span><span class="dots"></span><span class="p">10 DT</span></li><li><span class="n">Mojito Piña Colada</span><span class="dots"></span><span class="p">10 DT</span></li>
         </ul>
       </section>
-      <section class="cat">
+      <section class="cat" id="cat-9-smoothies">
         <h2>Smoothies</h2>
         <ul>
           <li><span class="n">Smoothie Ananas</span><span class="dots"></span><span class="p">13 DT</span></li><li><span class="n">Smoothie Fraise</span><span class="dots"></span><span class="p">13 DT</span></li><li><span class="n">Smoothie Datte</span><span class="dots"></span><span class="p">13 DT</span></li><li><span class="n">Smoothie Pêche</span><span class="dots"></span><span class="p">13 DT</span></li><li><span class="n">Smoothie Mix Fruits</span><span class="dots"></span><span class="p">13 DT</span></li><li><span class="n">Smoothie Oreo</span><span class="dots"></span><span class="p">13 DT</span></li><li><span class="n">Smoothie Chocolate</span><span class="dots"></span><span class="p">13 DT</span></li><li><span class="n">Smoothie Lotus</span><span class="dots"></span><span class="p">13 DT</span></li>
         </ul>
       </section>
-      <section class="cat">
+      <section class="cat" id="cat-10-autres">
         <h2>Autres</h2>
         <ul>
           <li><span class="n">adidas</span><span class="dots"></span><span class="p">3.800 DT</span></li><li><span class="n">jus banane</span><span class="dots"></span><span class="p">10 DT</span></li><li><span class="n">Formule Rapidos 1</span><span class="dots"></span><span class="p">6 DT</span></li><li><span class="n">Formule Rapidos 2</span><span class="dots"></span><span class="p">6 DT</span></li><li><span class="n">Cappuccin</span><span class="dots"></span><span class="p">3.429 DT</span></li><li><span class="n">Café spécial</span><span class="dots"></span><span class="p">5 DT</span></li><li><span class="n">Café turc</span><span class="dots"></span><span class="p">3.972 DT</span></li><li><span class="n">Thé à la menthe</span><span class="dots"></span><span class="p">2.628 DT</span></li><li><span class="n">Thé Infusion</span><span class="dots"></span><span class="p">5 DT</span></li><li><span class="n">Citronnade</span><span class="dots"></span><span class="p">5.935 DT</span></li><li><span class="n">Jus de fraise</span><span class="dots"></span><span class="p">8 DT</span></li><li><span class="n">Jus de pêche</span><span class="dots"></span><span class="p">9 DT</span></li><li><span class="n">Jus de kiwi</span><span class="dots"></span><span class="p">9.500 DT</span></li><li><span class="n">Cocktail fruits de saisons</span><span class="dots"></span><span class="p">12.333 DT</span></li><li><span class="n">Eau 0.5L</span><span class="dots"></span><span class="p">2 DT</span></li><li><span class="n">Eau 1L</span><span class="dots"></span><span class="p">3.490 DT</span></li><li><span class="n">Soda</span><span class="dots"></span><span class="p">4 DT</span></li><li><span class="n">Mojito fruits rouge</span><span class="dots"></span><span class="p">10 DT</span></li><li><span class="n">Vanilla Milkshake</span><span class="dots"></span><span class="p">10 DT</span></li><li><span class="n">Fraise Milkshake</span><span class="dots"></span><span class="p">10 DT</span></li><li><span class="n">Double Scoop Ice Cream</span><span class="dots"></span><span class="p">7 DT</span></li><li><span class="n">Al Fakher Mint</span><span class="dots"></span><span class="p">12 DT</span></li><li><span class="n">Al Fakher Mélange</span><span class="dots"></span><span class="p">12 DT</span></li><li><span class="n">Chicha simple</span><span class="dots"></span><span class="p">3 DT</span></li><li><span class="n">Chicha Vido</span><span class="dots"></span><span class="p">8 DT</span></li><li><span class="n">Chocolat au lait</span><span class="dots"></span><span class="p">3 DT</span></li><li><span class="n">Croissant</span><span class="dots"></span><span class="p">2.300 DT</span></li><li><span class="n">Pain au chocolat</span><span class="dots"></span><span class="p">2.500 DT</span></li><li><span class="n">Croissant aux amandes</span><span class="dots"></span><span class="p">3.500 DT</span></li><li><span class="n">Pâté</span><span class="dots"></span><span class="p">2.800 DT</span></li><li><span class="n">Cake palo amande</span><span class="dots"></span><span class="p">4.500 DT</span></li><li><span class="n">Mini pizza</span><span class="dots"></span><span class="p">5 DT</span></li><li><span class="n">Millefeuille</span><span class="dots"></span><span class="p">2.344 DT</span></li><li><span class="n">Soufflé</span><span class="dots"></span><span class="p">4.906 DT</span></li><li><span class="n">Nescafé</span><span class="dots"></span><span class="p">4 DT</span></li><li><span class="n">Fondant</span><span class="dots"></span><span class="p">7 DT</span></li><li><span class="n">Fondant pistache</span><span class="dots"></span><span class="p">7.500 DT</span></li><li><span class="n">Schneck</span><span class="dots"></span><span class="p">3.200 DT</span></li><li><span class="n">Gâteaux</span><span class="dots"></span><span class="p">8 DT</span></li><li><span class="n">Frappuccino Aromatisé</span><span class="dots"></span><span class="p">11 DT</span></li><li><span class="n">Macchiato</span><span class="dots"></span><span class="p">4 DT</span></li><li><span class="n">Cheese Cake</span><span class="dots"></span><span class="p">10 DT</span></li><li><span class="n">Pistache gâteau</span><span class="dots"></span><span class="p">9 DT</span></li><li><span class="n">Lait</span><span class="dots"></span><span class="p">2 DT</span></li><li><span class="n">Cake vanille</span><span class="dots"></span><span class="p">3.750 DT</span></li><li><span class="n">Spot</span><span class="dots"></span><span class="p">2.500 DT</span></li><li><span class="n">Crêpe sold</span><span class="dots"></span><span class="p">9 DT</span></li>
         </ul>
       </section>
-      <section class="cat">
+      <section class="cat" id="cat-11-cafes">
         <h2>cafes</h2>
         <ul>
           <li><span class="n">directe</span><span class="dots"></span><span class="p">4 DT</span></li>
